@@ -4,5 +4,9 @@
 // executables
 *.out
 
+// libraries
+*.a
+*.so
+
 // vs code settings
 .vscode
