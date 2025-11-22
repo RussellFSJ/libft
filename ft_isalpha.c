@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 20:54:42 by rfoo              #+#    #+#             */
-/*   Updated: 2025/11/22 21:06:54 by rfoo             ###   ########.fr       */
+/*   Updated: 2025/11/22 22:21:55 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isalpha(int c)
 {
-	return (ft_islower(c) || ft_isupper(c));
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
