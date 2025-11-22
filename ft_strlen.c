@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 21:30:19 by rfoo              #+#    #+#             */
-/*   Updated: 2025/11/22 21:30:20 by rfoo             ###   ########.fr       */
+/*   Updated: 2025/11/22 21:32:27 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_strlen(char *str)
 	int	length;
 
 	length = 0;
-	while(str[length])
+	while (str[length])
 	{
 		length++;
 	}
