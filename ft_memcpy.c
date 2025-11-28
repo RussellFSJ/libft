@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 19:06:22 by rfoo              #+#    #+#             */
-/*   Updated: 2025/11/26 19:13:58 by rfoo             ###   ########.fr       */
+/*   Updated: 2025/11/28 18:59:30 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	p1 = (unsigned char *)dest;
 	p2 = (unsigned char *)src;
-	while(i < n)
+	while (i < n)
 	{
 		p1[i] = p2[i];
 		i++;
