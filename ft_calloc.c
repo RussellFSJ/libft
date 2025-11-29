@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 21:13:28 by rfoo              #+#    #+#             */
-/*   Updated: 2025/11/29 21:13:29 by rfoo             ###   ########.fr       */
+/*   Updated: 2025/11/30 04:33:36 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	i = 0;
 	if (!nmemb || !size)
 		return (malloc(0));
-	if (nmemb > (size_t)(-1)/size)
+	if (nmemb > (size_t)(-1) / size)
 		return (NULL);
 	mem = malloc(nmemb * size);
 	if (!mem)
