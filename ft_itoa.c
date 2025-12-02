@@ -3,52 +3,55 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
+/*   By: russ1337 <russ1337@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 21:05:06 by rfoo              #+#    #+#             */
-/*   Updated: 2025/12/01 21:33:04 by rfoo             ###   ########.fr       */
+/*   Updated: 2025/12/03 06:16:15 by russ1337         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static size_t	num_length(long n);
+
 char	*ft_itoa(int n)
 {
-	size_t	strlen;
+	long	num;
+	size_t	len;
 	char	*str;
-	int		sign;
-	size_t	i;
-	int		div;
 
-	if (n == 0)
-		return ("0");
-	strlen = 0;
-	sign = 1;
-	if (n < 0)
-	{
-		strlen++;
-		sign = -1;
-		n = -n;
-	}
-	while (n / div > 0)
-	{
-		strlen++;
-		div *= 10;
-	}
-	str = malloc(strlen + 1);
+	num = n;
+	len = num_length(num);
+	str = malloc(len + 1);
 	if (!str)
 		return (NULL);
-	if (sign < 0)
+	str[len] = '\0';
+	if (num == 0)
+        str[0] = '0';
+	if (num < 0)
 	{
 		str[0] = '-';
-		i++;
+		num = -num;
 	}
-	while (i < strlen)
+	while (num > 0)
 	{
-		str[strlen - 1 - i] = n % div + '0';
-		div /= 10;
-		i++;
+		str[--len] = (num % 10) + '0';
+		num /= 10;
 	}
-	str[strlen] = '\0';
 	return (str);
+}
+
+static size_t	num_length(long n)
+{
+	size_t	len;
+
+	len = 0;
+	if (n < 0)
+		len++;
+	while (n)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
 }
