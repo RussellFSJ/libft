@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/03 19:21:05 by rfoo              #+#    #+#             */
+/*   Updated: 2025/12/03 19:22:12 by rfoo             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
@@ -5,7 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	size_t	i;
 
 	if (!s || !f)
-        return ;
+		return ;
 	i = 0;
 	while (s[i])
 	{

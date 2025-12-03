@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 17:29:24 by rfoo              #+#    #+#             */
-/*   Updated: 2025/12/03 17:29:25 by rfoo             ###   ########.fr       */
+/*   Updated: 2025/12/03 19:20:46 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
 		return ;
-	while(*s)
+	while (*s)
 	{
 		ft_putchar_fd(*s, fd);
 		s++;

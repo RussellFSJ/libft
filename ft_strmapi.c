@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 17:30:58 by rfoo              #+#    #+#             */
-/*   Updated: 2025/12/03 17:30:59 by rfoo             ###   ########.fr       */
+/*   Updated: 2025/12/03 19:22:35 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *a, char (*f)(unsigned int, char))
 	char	*str;
 
 	if (!a || !f)
-        return (NULL);
+		return (NULL);
 	i = 0;
 	len = ft_strlen(a);
 	str = malloc(len + 1);
