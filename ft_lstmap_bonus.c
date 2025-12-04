@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 23:19:41 by rfoo              #+#    #+#             */
-/*   Updated: 2025/12/04 00:18:46 by rfoo             ###   ########.fr       */
+/*   Updated: 2025/12/04 22:10:08 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,22 @@
 
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 {
-	t_list	*res;
-	t_list	*node;
+	t_list	*new_list;
+	t_list	*new_node;
 
-	
-	if (!res)
-	{
-		ft_lstclear(lst, del);
+	if (!f || !del)
 		return (NULL);
+	new_list = NULL;
+	while (lst)
+	{
+		new_node = ft_lstnew(f(lst->content));
+		if (!new_node)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, new_node);
+		lst = lst->next;
 	}
-	return (res);
+	return (new_list);
 }
