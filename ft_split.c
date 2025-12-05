@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
+/*   By: russ1337 <russ1337@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 20:24:52 by rfoo              #+#    #+#             */
-/*   Updated: 2025/12/01 22:22:16 by rfoo             ###   ########.fr       */
+/*   Updated: 2025/12/05 14:57:59 by russ1337         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ static void	fill_arr(char **arr, char const *s, char c)
 			if (!arr[i])
 			{
 				free_arr(arr);
-				return (NULL);
 			}
 			s = end;
 			i++;
