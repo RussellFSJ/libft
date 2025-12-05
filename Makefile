@@ -26,12 +26,17 @@ all: $(NAME)
 $(NAME): $(OBJECT_FILES)
 	ar rcs $(NAME) $(OBJECT_FILES)
 
+bonus: $(NAME) 
+
+$(NAME): $(OBJECT_FILES) ${OBJECT_FILES_BONUS}
+	ar rcs $(NAME) $(OBJECT_FILES) ${OBJECT_FILES_BONUS}
+
 clean:
-	rm -f $(OBJECT_FILES)
+	rm -f $(OBJECT_FILES) ${OBJECT_FILES_BONUS}
 
 fclean: clean
 	rm -f $(NAME) 
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
