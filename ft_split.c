@@ -6,7 +6,7 @@
 /*   By: russ1337 <russ1337@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 20:24:52 by rfoo              #+#    #+#             */
-/*   Updated: 2025/12/05 14:57:59 by russ1337         ###   ########.fr       */
+/*   Updated: 2025/12/05 15:00:01 by russ1337         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ static void	fill_arr(char **arr, char const *s, char c)
 	char const	*end;
 	size_t		i;
 
+	i = 0;
 	while (*s)
 	{
 		while (*s == c)
