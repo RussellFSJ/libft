@@ -4,6 +4,9 @@
 // executables
 *.out
 
+// object files
+*.o
+
 // libraries
 *.a
 *.so
