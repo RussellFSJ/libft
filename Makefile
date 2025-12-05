@@ -23,11 +23,11 @@ NAME = libft.a
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+$(NAME): $(OBJECT_FILES)
+	ar rcs $(NAME) $(OBJECT_FILES)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJECT_FILES)
 
 fclean: clean
 	rm -f $(NAME) 
