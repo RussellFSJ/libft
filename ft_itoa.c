@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 21:05:06 by rfoo              #+#    #+#             */
-/*   Updated: 2025/12/03 19:23:17 by rfoo             ###   ########.fr       */
+/*   Updated: 2025/12/05 18:46:04 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ static size_t	num_length(long n)
 	len = 0;
 	if (n < 0)
 		len++;
+	if (n == 0)
+		return (1);
 	while (n)
 	{
 		n /= 10;
