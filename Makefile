@@ -1,7 +1,10 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -Iinclude
 
-SOURCE_FILES = ft_atoi.c  ft_bzero.c ft_calloc.c ft_isalnum.c \
+SRC_DIR = src
+OBJ_DIR = obj
+
+SRC_FILES = 	ft_atoi.c  ft_bzero.c ft_calloc.c ft_isalnum.c \
 				ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 				ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
 				ft_memmove.c ft_memset.c ft_split.c ft_strchr.c \
@@ -10,27 +13,35 @@ SOURCE_FILES = ft_atoi.c  ft_bzero.c ft_calloc.c ft_isalnum.c \
 				ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c \
 				ft_tolower.c ft_toupper.c ft_putchar_fd.c ft_putendl_fd.c \
 				ft_putnbr_fd.c ft_putstr_fd.c
-OBJECT_FILES = $(SOURCE_FILES:%.c=%.o)
 
-SOURCE_FILES_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
+SRC_FILES_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
 					 ft_lstsize_bonus.c ft_lstlast_bonus.c \
 					 ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
 					 ft_lstclear_bonus.c ft_lstiter_bonus.c \
 					 ft_lstmap_bonus.c
-OBJECT_FILES_BONUS = $(SOURCE_FILES_BONUS:%.c=%.o)
+
+SRC_FILES := $(patsubst %, $(SRC_DIR)/%, $(SRC_FILES))
+SRC_FILES_BONUS := $(patsubst %, $(SRC_DIR)/%, $(SRC_FILES_BONUS))
+
+OBJ_FILES = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC_FILES))
+OBJ_FILES_BONUS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC_FILES_BONUS))
 
 NAME = libft.a
 
 all: $(NAME)
 
-$(NAME): $(OBJECT_FILES)
-	ar rcs $(NAME) $(OBJECT_FILES)
+$(NAME): $(OBJ_FILES)
+	ar rcs $(NAME) $(OBJ_FILES)
 
-bonus: $(OBJECT_FILES) $(OBJECT_FILES_BONUS)
-	ar rcs $(NAME) $(OBJECT_FILES) $(OBJECT_FILES_BONUS)
+bonus: $(OBJ_FILES) $(OBJ_FILES_BONUS)
+	ar rcs $(NAME) $(OBJ_FILES) $(OBJ_FILES_BONUS)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c 
+	@mkdir -p $(OBJ_DIR) 
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJECT_FILES) ${OBJECT_FILES_BONUS}
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(NAME) 
