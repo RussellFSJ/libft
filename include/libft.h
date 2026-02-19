@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
+/*   By: russ1337 <russ1337@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 20:14:38 by rfoo              #+#    #+#             */
-/*   Updated: 2025/11/30 05:04:41 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/02/20 05:23:43 by russ1337         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdarg.h>
 
 // Libc functions
 int		ft_isalpha(int c);
@@ -54,7 +55,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
-// Bonus
+// Linked list 
 typedef struct s_list
 {
 	void			*content;
@@ -70,5 +71,33 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+// ft_printf
+typedef int	(*t_handler)(va_list *);
+typedef struct entry
+{
+	char		key;
+	t_handler	handler;
+}			t_entry;
+
+typedef struct dict
+{
+	int		size;
+	t_entry	*entries;
+}			t_dict;
+
+int			print_hex(unsigned long n, int uppercase);
+int			handle_char(va_list *args);
+int			handle_str(va_list *args);
+int			handle_int(va_list *args);
+int			handle_uint(va_list *args);
+int			handle_ptr(va_list *args);
+int			handle_lowerhex(va_list *args);
+int			handle_upperhex(va_list *args);
+int			handle_percent(va_list *args);
+t_dict		*dict_init(void);
+t_handler	dict_get(t_dict *dict, char key);
+void		dict_free(t_dict *dict);
+int			ft_printf(const char *s, ...);
 
 #endif
