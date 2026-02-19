@@ -6,7 +6,7 @@
 /*   By: russ1337 <russ1337@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 20:14:38 by rfoo              #+#    #+#             */
-/*   Updated: 2026/02/20 05:23:43 by russ1337         ###   ########.fr       */
+/*   Updated: 2026/02/20 06:02:14 by russ1337         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
-// Linked list 
+// linked list 
 typedef struct s_list
 {
 	void			*content;
@@ -99,5 +99,6 @@ t_dict		*dict_init(void);
 t_handler	dict_get(t_dict *dict, char key);
 void		dict_free(t_dict *dict);
 int			ft_printf(const char *s, ...);
+
 
 #endif
