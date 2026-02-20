@@ -49,14 +49,6 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJ_DIR)/$(FT_PRINTF_DIR)/%.o: $(SRC_DIR)/$(FT_PRINTF_DIR)/%.c
-	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJ_DIR)/$(GET_NXT_LN_DIR)/%.o: $(SRC_DIR)/$(GET_NXT_LN_DIR)/%.c
-	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
-
 clean:
 	rm -rf $(OBJ_DIR)
 
