@@ -6,7 +6,7 @@
 /*   By: russ1337 <russ1337@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 04:35:27 by rfoo              #+#    #+#             */
-/*   Updated: 2026/02/19 07:02:26 by russ1337         ###   ########.fr       */
+/*   Updated: 2026/02/20 14:28:48 by russ1337         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	strlen2;
 	char	*str;
 
+	if (!s1 && !s2)
+		return (NULL);
+	if (!s1)
+		return (ft_strdup(s2));
+	if (!s2)
+		return (ft_strdup(s1));
 	strlen1 = ft_strlen(s1);
 	strlen2 = ft_strlen(s2);
 	str = malloc(strlen1 + strlen2 + 1);

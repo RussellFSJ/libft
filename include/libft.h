@@ -6,7 +6,7 @@
 /*   By: russ1337 <russ1337@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 20:14:38 by rfoo              #+#    #+#             */
-/*   Updated: 2026/02/20 06:02:14 by russ1337         ###   ########.fr       */
+/*   Updated: 2026/02/20 14:30:01 by russ1337         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,10 @@ t_handler	dict_get(t_dict *dict, char key);
 void		dict_free(t_dict *dict);
 int			ft_printf(const char *s, ...);
 
+// get_next_line
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+char	*get_next_line(int fd);
 
 #endif
