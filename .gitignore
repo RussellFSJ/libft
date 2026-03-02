@@ -4,8 +4,8 @@
 // executables
 *.out
 
-// object files
-/obj
+// build files
+/build
 *.o
 
 // libraries
