@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 20:14:38 by rfoo              #+#    #+#             */
-/*   Updated: 2026/03/13 18:45:55 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/15 20:14:36 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void		ft_putnbr_fd(int n, int fd);
 // linked list 
 typedef struct s_list
 {
+	size_t			index;
 	void			*content;
 	struct s_list	*next;
 }					t_list;
