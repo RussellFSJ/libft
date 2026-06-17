@@ -57,6 +57,8 @@ This version of `libft` includes `ft_printf` and `get_next_line` modules after c
 | `void ft_putnbr_fd(int n, int fd);` | Writes integer `n` as a string to the given file descriptor `fd`. |
 | `void ft_swap(int *a, int *b);` | Swaps the values of two integers pointed to by `a` and `b`. |
 | `long ft_atol(const char *str);` | Converts the string `str` to a `long` integer value. Similar to `atoi`, but returns a `long`. |
+| `int ft_isdouble(const char *str);` | Checks if the string `str` represents a valid double (floating‑point number). Returns nonzero if true, zero otherwise. |
+| `double ft_atof(const char *str);` | Converts the string `str` to a `double` floating‑point value. |
 
 ### Linked list functions
 
